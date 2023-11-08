@@ -1,9 +1,7 @@
+import Router from "./routers/router";
+
 function App() {
-  return (
-    <div>
-      <h1>happy hacking</h1>
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;

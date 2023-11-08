@@ -5,12 +5,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { theme } from "./styles/theme.ts";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.Fragment>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-    </ThemeProvider>
-    <App />
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+      </ThemeProvider>
+      <App />
+    </BrowserRouter>
   </React.Fragment>
 );

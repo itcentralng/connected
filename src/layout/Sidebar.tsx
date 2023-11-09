@@ -8,7 +8,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
-import { MessageSharp, ViewList } from "@mui/icons-material";
+import { MessageSharp, ViewList, FileUpload } from "@mui/icons-material";
 import { ReactNode } from "react";
 
 type Props = {
@@ -24,9 +24,14 @@ type MenuItem = {
 const Sidebar = ({ drawerWidth }: Props) => {
   const menuItems = [
     {
+      icon: <FileUpload />,
+      text: "Add File",
+      link: "/",
+    },
+    {
       icon: <MessageSharp />,
       text: "New Message",
-      link: "/",
+      link: "createMessage",
     },
     {
       icon: <ViewList />,
@@ -52,15 +57,15 @@ const Sidebar = ({ drawerWidth }: Props) => {
         <Typography
           color="primary.main"
           sx={{
-            fontWeight: "600",
+            fontWeight: "bold",
             letterSpacing: "4px",
             fontSize: 18,
-            textTransform: "uppercase",
+            // textTransform: "uppercase",
             fontFamily: "monospace",
             textAlign: "center",
           }}
         >
-          Connected
+          ConnectED
         </Typography>
       </Toolbar>
       <Divider />

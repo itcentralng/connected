@@ -7,23 +7,22 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { useNavigate } from "react-router-dom";
 import {
-  CircularProgress,
+  // CircularProgress,
   FormControl,
   FormLabel,
   MenuItem,
   Select,
-  Stack,
+  // Stack,
 } from "@mui/material";
 
 export default function CreateMessage() {
   const navigate = useNavigate();
   const short_code = 4444;
 
-  const [fileUrl, setFileUrl] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [location, setLocation] = React.useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     handleCreateMessage();
   };
@@ -34,7 +33,6 @@ export default function CreateMessage() {
         method: "POST",
         body: JSON.stringify({
           short_code,
-          fileUrl,
           message,
           location,
         }),
@@ -45,19 +43,6 @@ export default function CreateMessage() {
       if (req.ok) {
         navigate("/messages");
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleFileChange = async (e: any) => {
-    try {
-      const file = e.target.files[0];
-      const formData = new FormData();
-      formData.append("file", file);
-      //upload file here and set file furl
-      setFileUrl("http://fsfdffs");
     } catch (error) {
       console.log(error);
     }
@@ -76,21 +61,6 @@ export default function CreateMessage() {
       >
         <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <FormControl fullWidth margin="normal">
-            <FormLabel>File</FormLabel>
-            <Stack direction="row" spacing={1}>
-              <TextField
-                type="file"
-                id="file"
-                name="file"
-                onChange={(e) => handleFileChange(e)}
-                fullWidth
-                required
-              />
-              {false && <CircularProgress />}
-            </Stack>
-          </FormControl>
-
-          <FormControl fullWidth margin="normal">
             <FormLabel>Message</FormLabel>
             <TextField
               placeholder="message"
@@ -100,13 +70,14 @@ export default function CreateMessage() {
               required
               fullWidth
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setMessage(e.target.value)
+              }
             />
           </FormControl>
 
           <FormControl fullWidth margin="normal">
             <FormLabel>Area</FormLabel>
-
             <Select
               value={location}
               onChange={(e) => setLocation(e.target.value)}
@@ -119,15 +90,26 @@ export default function CreateMessage() {
               <MenuItem value={"09036215851"}>Zaria</MenuItem>
             </Select>
           </FormControl>
-
           <Button
             type="submit"
             fullWidth
+            loading
+            // variant="outlined"
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
             Send
           </Button>
+          {/* <LoadingButton
+          size="small"
+          onClick={handleClick}
+          endIcon={<SendIcon />}
+          loading={loading}
+          loadingPosition="end"
+          variant="contained"
+        > */}
+          {/* <span>Send</span>
+        </LoadingButton> */}
           <Grid container>
             <Grid item xs>
               {/* <Link href="#" variant="body2">

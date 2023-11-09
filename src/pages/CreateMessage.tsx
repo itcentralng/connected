@@ -70,20 +70,13 @@ export default function CreateMessage() {
               required
               fullWidth
               value={message}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setMessage(e.target.value)
-              }
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
             />
           </FormControl>
 
           <FormControl fullWidth margin="normal">
             <FormLabel>Area</FormLabel>
-            <Select
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              fullWidth
-              required
-            >
+            <Select value={location} onChange={(e) => setLocation(e.target.value)} fullWidth required>
               <MenuItem value="" disabled>
                 select location
               </MenuItem>
@@ -93,7 +86,7 @@ export default function CreateMessage() {
           <Button
             type="submit"
             fullWidth
-            loading
+            // loading //there is no attribute called loading  --Ibrahiim
             // variant="outlined"
             variant="contained"
             sx={{ mt: 3, mb: 2 }}

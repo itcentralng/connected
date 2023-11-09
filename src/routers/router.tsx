@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../layout/Layout";
 import CreateMessage from "../pages/CreateMessage";
 import Messages from "../pages/Messages";
+import AddFiles from "../pages/AddFiles";
 
 type ProtectedRoute = {
   children?: ReactNode;
@@ -34,7 +35,8 @@ const Router = () => {
           </ProtectedRoute>
         }
       >
-        <Route path="/" element={<CreateMessage />} />
+        <Route path="/" element={<AddFiles />} />
+        <Route path="createMessage" element={<CreateMessage />} />
         <Route path="messages" element={<Messages />} />
       </Route>
 

@@ -1,21 +1,10 @@
-import * as React from "react";
-import {
-  Box,
-  Container,
-  CssBaseline,
-  FormControl,
-  CircularProgress,
-  Button,
-  Grid,
-  FormLabel,
-  Stack,
-  TextField,
-} from "@mui/material";
+// import * as React from "react";
+import { Box, Container, CssBaseline, FormControl, CircularProgress, Button, Grid, FormLabel, Stack, TextField } from "@mui/material";
 // import { LoadingButton } from "@mui/lab";
 
 export default function AddFiles() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [fileUrl, setFileUrl] = React.useState("");
+  // const [fileUrl, setFileUrl] = React.useState(""); //you are not using the variable anywhere so i commented it out --Ibrahim
   // handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   //   // your code here
   // }
@@ -27,7 +16,7 @@ export default function AddFiles() {
       const formData = new FormData();
       formData.append("file", file);
       // upload file here and set file URL
-      setFileUrl("http://fsfdffs");
+      // setFileUrl("http://fsfdffs");
     } catch (error) {
       console.log(error);
     }
@@ -48,14 +37,7 @@ export default function AddFiles() {
           <FormControl fullWidth margin="normal">
             <FormLabel>File</FormLabel>
             <Stack direction="row" spacing={1}>
-              <TextField
-                type="file"
-                id="file"
-                name="file"
-                onChange={handleFileChange}
-                fullWidth
-                required
-              />
+              <TextField type="file" id="file" name="file" onChange={handleFileChange} fullWidth required />
               {false && <CircularProgress />}
             </Stack>
           </FormControl>

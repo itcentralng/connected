@@ -21,7 +21,7 @@ export default function CreateMessage() {
 
   const [fileUrl, setFileUrl] = React.useState("");
   const [message, setMessage] = React.useState("");
-  const [area, setArea] = React.useState("");
+  const [location, setLocation] = React.useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,7 +36,7 @@ export default function CreateMessage() {
           short_code,
           fileUrl,
           message,
-          area,
+          location,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -108,12 +108,14 @@ export default function CreateMessage() {
             <FormLabel>Area</FormLabel>
 
             <Select
-              value={area}
-              onChange={(e) => setArea(e.target.value)}
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
               fullWidth
               required
             >
-              <MenuItem disabled>select area</MenuItem>
+              <MenuItem value="" disabled>
+                select location
+              </MenuItem>
               <MenuItem value={"09036215851"}>Zaria</MenuItem>
             </Select>
           </FormControl>

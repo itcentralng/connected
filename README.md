@@ -1,3 +1,11 @@
+# Project Discription
+
+ConnectED is a platform that aims to address a significant public health issue by providing a centralized digital hub for government agencies and NGOs to upload important health updates and information. The platform would streamline the dissemination of crucial data to populations across wide geographic areas. The SMS functionality would ensure even those in remote, rural localities without consistent internet access could still receive timely advisories on outbreaks, best medical practices, vaccination schedules, and more. By partnering both information providers and citizens on one cohesive platform, ConnectED could virtually extend the reach of institutional messaging far beyond what traditional in-person community outreach allows.
+
+# Backend Repo
+
+https://github.com/itcentralng/connected-vectara-hack.git
+
 # Vite React TypeScript Redux-Toolkit Material-UI Template
 
 This template provides a starting point for building web applications that leverage the power of React, TypeScript, Redux-Toolkit, and Material-UI. With these technologies combined, you can create feature-rich and maintainable applications.
@@ -37,7 +45,6 @@ Here's a breakdown of the key directories and files:
 - `README.md`: You're currently reading this file! It provides project information and documentation.
 - `package.json`: Contains package configuration and dependencies.
 - `tsconfig.json`: TypeScript configuration.
-
 
 ## Getting Started
 

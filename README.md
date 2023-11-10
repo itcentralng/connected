@@ -10,7 +10,8 @@ https://github.com/itcentralng/connected-vectara-hack.git
 
 https://developers.africastalking.com/simulator
 
-Your must register befor you can start sending your query, register using the USSD: *384*212212#
+Create an account with AfricasTalking before doing the below in the sandbox simulator
+Your must register before you can start sending your query, register using the USSD: *384*212212#
 The shortcode you can use to interact with is: 3525
 
 # Vite React TypeScript Redux-Toolkit Material-UI Template

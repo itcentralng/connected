@@ -6,6 +6,13 @@ ConnectED is a platform that aims to address a significant public health issue b
 
 https://github.com/itcentralng/connected-vectara-hack.git
 
+# Demo link
+
+https://developers.africastalking.com/simulator
+
+Your must register befor you can start sending your query, register using the USSD: *384*212212#
+The shortcode you can use to interact with is: 3525
+
 # Vite React TypeScript Redux-Toolkit Material-UI Template
 
 This template provides a starting point for building web applications that leverage the power of React, TypeScript, Redux-Toolkit, and Material-UI. With these technologies combined, you can create feature-rich and maintainable applications.
